@@ -5,9 +5,9 @@
       Main card that holds the actual site
     -->
     <div class="card">
-      <app-nav-bar></app-nav-bar>
+      <app-nav-bar (optionSelectedEvent)="changeViews($event)"></app-nav-bar>
       <div class="card-body">
-
+        <app-home *ngIf="viewSelected == 'home'"></app-home>
       </div>
     </div>
   </div>

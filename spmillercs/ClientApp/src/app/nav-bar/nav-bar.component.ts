@@ -6,19 +6,20 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  @Output() optionSelectedEmitter = new EventEmitter<string>();
+  @Output() optionSelectedEvent = new EventEmitter<string>();
 
   tabSelected: string = "home";
 
 
   constructor() { }
-//test
+
   ngOnInit() {
   }
 
+  // Notifies main-container of the tab change
   optionSelected(option: string) {
     this.tabSelected = option;
-    this.optionSelectedEmitter.emit(option);
+    this.optionSelectedEvent.emit(option);
   }
 
 }
