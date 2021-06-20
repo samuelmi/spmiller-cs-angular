@@ -1,0 +1,17 @@
+<div class="card-title">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="tabSelected == 'home'" (click)="optionSelected('home')">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="tabSelected == 'resume'" (click)="optionSelected('resume')">Resume</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="tabSelected == 'projects'" (click)="optionSelected('projects')">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="tabSelected == 'guest book'" (click)="optionSelected('guest book')">Guest Book</a>
+    </li>
+  </ul>
+</div>
+
