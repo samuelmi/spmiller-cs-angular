@@ -8,6 +8,7 @@
       <app-nav-bar (optionSelectedEvent)="changeViews($event)"></app-nav-bar>
       <div class="card-body">
         <app-home *ngIf="viewSelected == 'home'"></app-home>
+        <guest-book *ngIf="viewSelected == 'guest book'"></guest-book>
       </div>
     </div>
   </div>
