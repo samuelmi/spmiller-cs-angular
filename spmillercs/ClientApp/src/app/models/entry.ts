@@ -1,5 +1,4 @@
-export class entry
-{
+export class Entry {
     id: number;
     name: string;
     message: string;

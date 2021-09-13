@@ -22,7 +22,8 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button [disabled]="message.length > 128 ? true : null" type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Submit</button>
+        <button [disabled]="message.length > 128 ? true : null" type="button" class="btn btn-primary"
+            (click)="modal.close('Save click'); addEntry()">Submit</button>
     </div>
 </ng-template>
 
@@ -32,4 +33,4 @@
     <h1 class="mb-3">Guest Book</h1>
 </div>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Sign Guest Book</button>

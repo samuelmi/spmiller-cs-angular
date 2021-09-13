@@ -39,15 +39,32 @@ namespace spmillercs.Controllers
                 {
                     return BadRequest("Your guestbook entry contains offensive term(s).");
                 }
+                entry.Status = "Pending";
                 _context.entries.Add(entry);
                 _context.SaveChanges();
                 return Ok();
             }
             catch (Exception ex)
             {
-                _logger.LogCritical(ex.ToString());
+                _logger.LogError(ex.ToString());
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Get()
+        {
+            try
+            {
+                return Ok(_context.entries.Where(x => x.Status == "Approved"));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
                 return BadRequest();
             }
         }
     }
+
+    
 }

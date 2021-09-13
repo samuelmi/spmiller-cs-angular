@@ -1,0 +1,37 @@
+<br />
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Token</span>
+                </div>
+                <input type="password" class="form-control" [(ngModel)]="token" name="token">
+            </div>
+
+            <button type="button" class="btn btn-primary" (click)="getPendingEntries()">Get Pending Entries</button>
+        </form>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let entry of pendingEntries">
+                    <td>
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td>{{entry.name}}</td>
+                    <td>{{entry.message}}</td>
+                    <td>{{entry.timestamp | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

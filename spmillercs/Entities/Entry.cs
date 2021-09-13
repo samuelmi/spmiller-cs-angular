@@ -12,5 +12,7 @@ namespace spmillercs.Entities
         public string Message { get; set; }
         [Required]
         public string Timestamp { get; set; }
+        [Required]
+        public string Status { get; set; } // Pending, Approved, Rejected
     }
 }
